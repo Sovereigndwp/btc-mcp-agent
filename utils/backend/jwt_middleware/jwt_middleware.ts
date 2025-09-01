@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import * as chalk from "chalk";
-import * as debug from "debug";
+import debug from "debug";
 import type { NextFunction, Request, Response } from "express";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Express from "express-serve-static-core";

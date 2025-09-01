@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import debug from "debug";
-import * as express from "express";
+import express from "express";
 import type { NextFunction, Request, Response } from "express";
 import * as fs from "fs";
 import * as http from "http";
