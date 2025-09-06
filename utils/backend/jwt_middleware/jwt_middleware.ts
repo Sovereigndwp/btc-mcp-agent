@@ -110,7 +110,7 @@ export function createJwtMiddleware(
         return sendUnauthorizedResponse(res);
       }
 
-      req["canva"] = {
+      (req as any)["canva"] = {
         appId: payload.aud,
         brandId: payload.brandId,
         userId: payload.userId,

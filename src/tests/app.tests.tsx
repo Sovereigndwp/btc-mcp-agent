@@ -5,7 +5,7 @@ import { requestOpenExternalUrl } from "@canva/platform";
 import { fireEvent, render } from "@testing-library/react";
 import type { RenderResult } from "@testing-library/react";
 import React from "react";
-import { useAddElement } from "utils/use_add_element";
+import { useAddElement } from "../../utils/use_add_element";
 import { App, DOCS_URL } from "../app";
 
 function renderInTestProvider(node: React.ReactNode): RenderResult {

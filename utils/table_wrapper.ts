@@ -369,10 +369,10 @@ export class TableWrapper {
     ) {
       let currentCell = this.rows[currentRowIdx].cells[currentColumnIdx];
       for (const key of Object.keys(frontCell.attributes)) {
-        if (frontCell.attributes[key] === behindCell.attributes[key]) {
+        if ((frontCell.attributes as any)[key] === (behindCell.attributes as any)[key]) {
           currentCell = currentCell || { type: "empty" };
           currentCell.attributes = currentCell.attributes || {};
-          currentCell.attributes[key] = frontCell.attributes[key];
+          (currentCell.attributes as any)[key] = (frontCell.attributes as any)[key];
         }
       }
       this.rows[currentRowIdx].cells[currentColumnIdx] = currentCell;
