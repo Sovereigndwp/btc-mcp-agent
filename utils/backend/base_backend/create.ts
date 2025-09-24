@@ -62,7 +62,7 @@ export function createBaseServer(router: express.Router): BaseServer {
   });
 
   // default error handler
-  app.use((err: any, req: any, res: any, next: any) => {
+  app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     console.error(err.stack);
     res.status(500).send({
       error: "something went wrong",

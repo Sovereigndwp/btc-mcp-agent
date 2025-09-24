@@ -27,3 +27,14 @@ declare module "*.svg" {
 }
 
 declare const BACKEND_HOST: string;
+
+// Augment Express Request to include Canva-specific properties
+declare module "express-serve-static-core" {
+  interface Request {
+    canva: {
+      appId: string;
+      userId: string;
+      brandId: string;
+    };
+  }
+}

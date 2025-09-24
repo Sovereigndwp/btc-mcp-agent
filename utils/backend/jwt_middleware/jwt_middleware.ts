@@ -16,18 +16,9 @@ const debugLogger = debug("express:middleware:jwt");
 const CANVA_BASE_URL = "https://api.canva.com";
 
 /**
- * Augment the Express request context to include the appId/userId/brandId fields decoded
- * from the JWT.
+ * The Express request context is augmented in declarations/declarations.d.ts to include 
+ * the appId/userId/brandId fields decoded from the JWT.
  */
-declare module "express-serve-static-core" {
-  export interface Request {
-    canva: {
-      appId: string;
-      userId: string;
-      brandId: string;
-    };
-  }
-}
 
 type CanvaJwt = Omit<jwt.Jwt, "payload"> & {
   payload: {
@@ -110,7 +101,7 @@ export function createJwtMiddleware(
         return sendUnauthorizedResponse(res);
       }
 
-      (req as any)["canva"] = {
+      req.canva = {
         appId: payload.aud,
         brandId: payload.brandId,
         userId: payload.userId,
